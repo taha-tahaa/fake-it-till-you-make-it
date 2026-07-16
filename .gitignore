@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+data/
+# This repo is code-only: run artifacts and the report live outside it.
+runs/
+*.pt
+*.ckpt
+*.pdf
+.cache/
+.ipynb_checkpoints/
+
+# private presentation prep — kept locally, not published
+presentation/SPEAKER_SCRIPT.md

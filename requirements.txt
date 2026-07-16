@@ -1,0 +1,16 @@
+# 00460217 - Fake It Till You Make It
+# Tested with Python 3.10. For a local NVIDIA GPU install torch with CUDA first:
+#   pip install torch==2.5.1 torchaudio==2.5.1 --index-url https://download.pytorch.org/whl/cu121
+torch>=2.3
+torchaudio>=2.3
+transformers>=4.46,<4.50   # wav2vec 2.0 backbone (>=4.50 blocks .bin load unless torch>=2.6)
+peft>=0.13,<0.16           # LoRA / DoRA adapters (Tutorial 9 recommends this library)
+soundfile>=0.12         # FLAC decoding backend for torchaudio on Windows
+scipy>=1.10             # RawBoost FIR filtering
+scikit-learn>=1.3       # ROC-AUC, t-SNE
+numpy>=1.24
+matplotlib>=3.7
+pyyaml>=6.0
+tqdm>=4.66
+pytest>=8.0             # unit tests: python -m pytest tests -q
+kagglehub>=0.3          # dataset download (scripts/download_data.py)

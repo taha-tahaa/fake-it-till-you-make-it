@@ -1,0 +1,26 @@
+seed: 1234
+model:
+  name: ssl
+  backbone: facebook/wav2vec2-base
+  peft: dora
+  r: 8
+  alpha: 16
+data:
+  root: ./data
+  augment: rawboost
+  augment_p: 0.5
+  max_seconds: 4.0
+  num_workers: 2
+train:
+  epochs: 10
+  batch_size: 16
+  grad_accum: 2
+  lr: 5.0e-4
+  lr_backbone: 1.0e-4
+  weight_decay: 1.0e-4
+  warmup_epochs: 1
+  patience: 3
+  grad_clip: 1.0
+  amp: true
+  loss: bce
+  out: runs/wav2vec2_dora

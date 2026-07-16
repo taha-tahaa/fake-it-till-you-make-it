@@ -1,0 +1,22 @@
+seed: 1234
+model:
+  name: lcnn
+  frontend: mel
+data:
+  root: ./data
+  augment: none
+  augment_p: 0.5
+  max_seconds: 4.0
+  num_workers: 2
+train:
+  epochs: 30
+  batch_size: 64
+  grad_accum: 1
+  lr: 3.0e-4
+  weight_decay: 1.0e-4
+  warmup_epochs: 1
+  patience: 5
+  grad_clip: 1.0
+  amp: true
+  loss: bce
+  out: runs/baseline_lcnn_mel

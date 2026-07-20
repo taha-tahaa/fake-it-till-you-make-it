@@ -1,0 +1,22 @@
+data:
+  augment: rawboost
+  augment_p: 0.5
+  max_seconds: 4.0
+  num_workers: 2
+  root: C:/asvspoof
+model:
+  frontend: lfcc
+  name: lcnn
+seed: 1234
+train:
+  amp: true
+  batch_size: 64
+  epochs: 30
+  grad_accum: 1
+  grad_clip: 1.0
+  loss: bce
+  lr: 0.0003
+  out: runs/baseline_lcnn_lfcc_aug
+  patience: 5
+  warmup_epochs: 1
+  weight_decay: 0.0001
